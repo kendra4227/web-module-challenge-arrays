@@ -111,22 +111,21 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(originalFlavors, string) {
+function removeFlavorByName(arr, string) {
 
-    for (let i = 0; i < originalFlavors.length; i++) {
-        if (originalFlavors[29] === string) {
-            originalFlavors.splice(i, 29);
-            return i;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === string) {
+            arr.splice(i, 1);
+
 
         }
-        removeFlavorByName(originalFlavors, string);
-        console.log(originalFlavors.splice(i, 29));
+
 
     }
-
+    console.log(arr);
 }
 
-
+removeFlavorByName(originalFlavors, 'Vanilla');
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -136,12 +135,13 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(arr, arrCopy) {
+function copy(arr, newArray) {
 
+    newArray = [...arr];
+    console.log(newArray);
 
 }
-copy();
-
+copy(originalFlavors);
 
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
@@ -159,12 +159,17 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(originalFlavors, ) {
-
-
-
+function filterByWord(arr, string) {
+    newlist = [];
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i].includes(string)) {
+            newlist.push(arr[i]);
+        }
+    }
+    return newlist;
 }
 
+console.log(filterByWord(originalFlavors, 'Chocolate'));
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
