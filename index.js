@@ -93,7 +93,7 @@ Your function should accept:
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
 function getFlavorByIndex(arr, a) {
-    return arr[7];
+    return arr[a];
 
 }
 console.log(getFlavorByIndex(originalFlavors, 7)); //Will return "Chocolate Almond"
@@ -184,11 +184,18 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength( /*code here*/ ) {
+function getAverageWordLength(arr) {
 
-    /*code here*/
-
+    let total = 0;
+    for (i = 0; i < arr.length; i++) {
+        total += arr[i].length;
+    }
+    let avg = total / arr.length;
+    console.log(avg);
 }
+
+console.log(getAverageWordLength(originalFlavors));
+
 
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
@@ -276,7 +283,5 @@ var regionalFlavors = ["Pink Bubblegum",
 ]
 
 function getRandomFlavors( /*code here*/ ) {
-
-    /*code here*/
 
 }
